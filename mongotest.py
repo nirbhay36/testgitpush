@@ -7,7 +7,17 @@ d ={"name" : "nirbhay" ,
     "email": "n36" ,
     "surname": "ahir"}
 
-db1 = client['mongotest']
-coll = db1['test']
-coll.insert_one(d)
+j = [
+    {"hi":"hey" ,
+    "sk": "kn betho"}
+]
+
+database = client['mongotest']
+coll = database['test']
+##coll.insert_one(d)
+coll.insert_many(j)
+
+record = coll.find()
+for i in record:
+    print(i)
 
